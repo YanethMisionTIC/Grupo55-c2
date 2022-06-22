@@ -32,6 +32,34 @@ public class Exercise1 {
         //.next().chartAt(4) = N
         System.out.println("    Edad: ");
         age = scannerInstance.nextInt();
-        System.out.println("El usuario ingreso la siguiente información: " + userName + gender + age);
+        
+        //5. Iniciamos el bloque condicional
+        if(age >= 18){
+            //Mayor de edad
+            // or en python, || en java
+            // and en python, && en java
+            if(gender == 'f' || gender == 'F'){
+                System.out.println(userName + ", mujer mayor de edad");
+            }else if(gender == 'm' || gender == 'M'){
+                System.out.println(userName + ", hombre mayor de edad");
+            }else if(gender == 'o' || gender == 'O'){
+                System.out.println(userName + ", otro género mayor de edad");
+            }else{
+                //Escenario de error
+                System.out.println("Género seleccionado no existe.");
+            }
+        }else{
+            //Menor de edad
+            //Escenario de error
+            if(gender != 'f' && gender != 'F' && gender != 'm' && gender != 'M' && gender != 'o' && gender != 'O'){
+                System.out.println("Género seleccionado no existe.");
+            }else if(gender == 'f' || gender == 'F'){
+                System.out.println(userName + ", mujer menor de edad");
+            }else if(gender == 'm' || gender == 'M'){
+                System.out.println(userName + ", hombre menor de edad");
+            }else{
+                System.out.println(userName + ", otro género menor de edad");
+            }
+        }
     }
 }
